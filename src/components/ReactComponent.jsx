@@ -1,6 +1,6 @@
 import {useState} from 'react'
 
-function ReactComponent({children}) {
+export default function ReactComponent({children}) {
 
   const [count, setCount] = useState(0);
 
@@ -16,5 +16,3 @@ function ReactComponent({children}) {
     </>
   )
 }
-
-export default ReactComponent
