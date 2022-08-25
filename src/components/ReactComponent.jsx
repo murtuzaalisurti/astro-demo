@@ -1,19 +1,19 @@
-import React, {useEffect, useState} from 'react'
+import {useState} from 'react'
 
-function ReactComponent() {
+function ReactComponent({children}) {
+
   const [count, setCount] = useState(0);
 
-  function handleChange(e, action) {
-    console.log(action)
-    action === "plus" ? setCount(prev => prev++) : setCount(prev => prev--)
-  }
+  const add = () => setCount((prev) => prev + 1);
+  const subtract = () => setCount((prev) => prev - 1);
 
   return (
-    <div>
+    <>
+      <h1>{children}</h1>
       <p>{count}</p>
-      <button onClick={(e) => handleChange(e, 'plus')}>+</button>
-      <button onClick={(e) => handleChange(e, 'minus')}>-</button>
-    </div>
+      <button onClick={add}>+</button>
+      <button onClick={subtract}>-</button>
+    </>
   )
 }
 
